@@ -1,0 +1,168 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.sky,
+.land,
+.road {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-position: 0 top;
+  position: absolute;
+}
+
+.sky {
+  background-image: url(./media/background.jpg);
+  height: 100%;
+  animation: moveSky 30s linear infinite;
+}
+
+.land {
+  background-image: url(./media/land.png);
+  height: 50%;
+  bottom: 20%;
+  animation: moveLand 10s linear infinite;
+}
+
+.road {
+  background-image: url(./media/track.png);
+  height: 30%;
+  bottom: 0;
+  animation: moveRoad 1s linear infinite;
+}
+
+@keyframes moveSky {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+@keyframes moveLand {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes moveRoad {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.car {
+  width: 250px;
+  height: 70px;
+  background-image: url(./media/car_body.png);
+  z-index: 10;
+  position: absolute;
+  bottom: 28%;
+  left: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: car 0.5s linear infinite;
+}
+
+@keyframes car {
+  0% {
+    bottom: 28%;
+  }
+
+  50% {
+    bottom: 28.1%;
+  }
+
+  100% {
+    bottom: 27.9%;
+  }
+}
+
+.car img {
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  bottom: 0;
+  animation: wheel 0.5s linear infinite;
+}
+
+.car img.wheel-left {
+  left: 14%;
+}
+
+.car img.wheel-right {
+  right: 21%;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 42%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.control-btn {
+  padding: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn:hover {
+  background-color: #0056b3;
+}
+
+.control-btn i {
+  margin: 0;
+  font-size: 30px;
+}
+
+.no-animations .sky,
+.no-animations .land,
+.no-animations .road,
+.no-animations .car img,
+.no-animations .car {
+  animation: none !important;
+}

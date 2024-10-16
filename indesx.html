@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="script.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="sky"></div>
+    <div class="land"></div>
+    <div class="road"></div>
+    <div class="car">
+      <img src="./media/car-wheel.png" class="wheel-left wheel">
+      <img src="./media/car-wheel.png" class="wheel wheel-right">
+    </div>
+    <div class="controls">
+      <button id="speed-down" class="control-btn"><i class="fa fa-arrow-down"></i></button>
+      <button id="toggle-animations" class="control-btn"><i class="fa fa-pause"></i></button>
+      <button id="speed-up" class="control-btn"><i class="fa fa-arrow-up"></i></button>
+    </div>
+    <audio id="background-audio" src="./media/sound.mp3" preload="auto" loop></audio>
+  </div>
+</body>
+</html>
